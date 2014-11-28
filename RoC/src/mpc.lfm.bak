@@ -1,0 +1,673 @@
+object FormMPC: TFormMPC
+  Left = 712
+  Height = 594
+  Top = 70
+  Width = 552
+  Caption = 'Control Module'
+  ClientHeight = 594
+  ClientWidth = 552
+  LCLVersion = '1.2.6.0'
+  object Label1: TLabel
+    Left = 232
+    Height = 17
+    Top = 567
+    Width = 62
+    Caption = 'Distance:'
+    ParentColor = False
+  end
+  object Label24: TLabel
+    Left = 16
+    Height = 17
+    Top = 568
+    Width = 17
+    Caption = 'K1'
+    ParentColor = False
+  end
+  object Label25: TLabel
+    Left = 128
+    Height = 17
+    Top = 567
+    Width = 17
+    Caption = 'K2'
+    ParentColor = False
+  end
+  object GroupBoxDebug: TGroupBox
+    Left = 8
+    Height = 384
+    Top = 0
+    Width = 225
+    Caption = 'Debug'
+    ClientHeight = 365
+    ClientWidth = 221
+    TabOrder = 0
+    object MemoDebug: TMemo
+      Left = 6
+      Height = 354
+      Top = 5
+      Width = 208
+      Lines.Strings = (
+        ''
+      )
+      TabOrder = 0
+    end
+  end
+  object EditP1_badi: TEdit
+    Left = 301
+    Height = 27
+    Top = 558
+    Width = 48
+    TabOrder = 1
+    Text = '1.2'
+  end
+  object ButtonSetBallAtDistanceInline: TButton
+    Left = 128
+    Height = 46
+    Top = 386
+    Width = 104
+    Caption = 'Set'
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Left = 240
+    Height = 232
+    Top = 0
+    Width = 305
+    Caption = 'MPC Parameters'
+    ClientHeight = 213
+    ClientWidth = 301
+    TabOrder = 3
+    object EditN2: TLabeledEdit
+      Left = 62
+      Height = 27
+      Top = 23
+      Width = 40
+      EditLabel.AnchorSideLeft.Control = EditN2
+      EditLabel.AnchorSideRight.Control = EditN2
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditN2
+      EditLabel.Left = 62
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'N2:'
+      EditLabel.ParentColor = False
+      TabOrder = 0
+      Text = '7'
+    end
+    object EditNu: TLabeledEdit
+      Left = 108
+      Height = 27
+      Top = 23
+      Width = 40
+      EditLabel.AnchorSideLeft.Control = EditNu
+      EditLabel.AnchorSideRight.Control = EditNu
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditNu
+      EditLabel.Left = 108
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'Nu:'
+      EditLabel.ParentColor = False
+      TabOrder = 1
+      Text = '2'
+    end
+    object GroupBoxOptimizerPars: TGroupBox
+      Left = 14
+      Height = 120
+      Top = 55
+      Width = 242
+      Caption = 'Optimizer Parameters'
+      ClientHeight = 101
+      ClientWidth = 238
+      TabOrder = 2
+      object Label2: TLabel
+        Left = 7
+        Height = 17
+        Top = 18
+        Width = 48
+        Caption = 'IT Max:'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 14
+        Height = 17
+        Top = 48
+        Width = 39
+        Caption = 'delta:'
+        ParentColor = False
+      end
+      object Label9: TLabel
+        Left = 128
+        Height = 17
+        Top = 18
+        Width = 34
+        Caption = 'Eta+:'
+        ParentColor = False
+      end
+      object Label10: TLabel
+        Left = 134
+        Height = 17
+        Top = 48
+        Width = 30
+        Caption = 'Eta-:'
+        ParentColor = False
+      end
+      object Label5: TLabel
+        Left = 14
+        Height = 17
+        Top = 79
+        Width = 46
+        Caption = 'J Stop:'
+        ParentColor = False
+      end
+      object Label7: TLabel
+        Left = 130
+        Height = 17
+        Top = 79
+        Width = 41
+        Caption = 'alpha:'
+        ParentColor = False
+      end
+      object EditMaxIt: TEdit
+        Left = 62
+        Height = 27
+        Top = 9
+        Width = 56
+        TabOrder = 0
+        Text = '20'
+      end
+      object EditDelta: TEdit
+        Left = 62
+        Height = 27
+        Top = 39
+        Width = 56
+        TabOrder = 1
+        Text = '0.15'
+      end
+      object EditEtaPlus: TEdit
+        Left = 174
+        Height = 27
+        Top = 9
+        Width = 56
+        TabOrder = 2
+        Text = '1.2'
+      end
+      object EditEtaMinus: TEdit
+        Left = 174
+        Height = 27
+        Top = 39
+        Width = 56
+        TabOrder = 3
+        Text = '0.8'
+      end
+      object EditJStop: TEdit
+        Left = 62
+        Height = 27
+        Top = 71
+        Width = 56
+        TabOrder = 4
+        Text = '0.005'
+      end
+      object EditSDAlpha: TEdit
+        Left = 174
+        Height = 27
+        Top = 71
+        Width = 56
+        TabOrder = 5
+        Text = '0.15'
+      end
+    end
+    object CheckBoxEnable: TCheckBox
+      Left = 14
+      Height = 24
+      Top = 183
+      Width = 71
+      Caption = 'Enable'
+      TabOrder = 3
+    end
+    object EditL1: TLabeledEdit
+      Left = 158
+      Height = 27
+      Top = 23
+      Width = 40
+      EditLabel.AnchorSideLeft.Control = EditL1
+      EditLabel.AnchorSideRight.Control = EditL1
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditL1
+      EditLabel.Left = 158
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'L1:'
+      EditLabel.ParentColor = False
+      TabOrder = 4
+      Text = '918'
+    end
+    object EditL2: TLabeledEdit
+      Left = 206
+      Height = 27
+      Top = 23
+      Width = 40
+      EditLabel.AnchorSideLeft.Control = EditL2
+      EditLabel.AnchorSideRight.Control = EditL2
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditL2
+      EditLabel.Left = 206
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'L2:'
+      EditLabel.ParentColor = False
+      TabOrder = 5
+      Text = '500'
+    end
+    object EditL3: TLabeledEdit
+      Left = 254
+      Height = 27
+      Top = 23
+      Width = 40
+      EditLabel.AnchorSideLeft.Control = EditL3
+      EditLabel.AnchorSideRight.Control = EditL3
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditL3
+      EditLabel.Left = 254
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'L3:'
+      EditLabel.ParentColor = False
+      TabOrder = 6
+      Text = '5'
+    end
+    object EditN1: TLabeledEdit
+      Left = 14
+      Height = 27
+      Top = 23
+      Width = 40
+      Color = clNone
+      EditLabel.AnchorSideLeft.Control = EditN1
+      EditLabel.AnchorSideRight.Control = EditN1
+      EditLabel.AnchorSideRight.Side = asrBottom
+      EditLabel.AnchorSideBottom.Control = EditN1
+      EditLabel.Left = 14
+      EditLabel.Height = 17
+      EditLabel.Top = 3
+      EditLabel.Width = 40
+      EditLabel.Caption = 'N1:'
+      EditLabel.ParentColor = False
+      TabOrder = 7
+      Text = '1'
+    end
+  end
+  object GroupBox3: TGroupBox
+    Left = 240
+    Height = 200
+    Top = 232
+    Width = 305
+    Caption = 'Formation Control'
+    ClientHeight = 181
+    ClientWidth = 301
+    TabOrder = 4
+    object Label13: TLabel
+      Left = 6
+      Height = 17
+      Top = 15
+      Width = 62
+      Caption = 'Distance:'
+      ParentColor = False
+    end
+    object Label12: TLabel
+      Left = 6
+      Height = 17
+      Top = 43
+      Width = 82
+      Caption = 'Orientation:'
+      ParentColor = False
+    end
+    object Label11: TLabel
+      Left = 6
+      Height = 17
+      Top = 71
+      Width = 60
+      Caption = 'Position:'
+      ParentColor = False
+    end
+    object Label6: TLabel
+      Left = 6
+      Height = 17
+      Top = 99
+      Width = 44
+      Caption = 'Effort:'
+      ParentColor = False
+    end
+    object Label14: TLabel
+      Left = 6
+      Height = 17
+      Top = 159
+      Width = 71
+      Caption = 'Obstacles:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 166
+      Height = 17
+      Top = 71
+      Width = 54
+      Caption = 'P Value:'
+      ParentColor = False
+    end
+    object Label17: TLabel
+      Left = 6
+      Height = 17
+      Top = 128
+      Width = 46
+      Caption = 'Mates:'
+      ParentColor = False
+    end
+    object Label22: TLabel
+      Left = 166
+      Height = 17
+      Top = 38
+      Width = 55
+      Caption = 'D Value:'
+      ParentColor = False
+    end
+    object Label23: TLabel
+      Left = 206
+      Height = 17
+      Top = 127
+      Width = 85
+      Caption = 'Covariances:'
+      ParentColor = False
+    end
+    object EditW1_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 7
+      Width = 64
+      TabOrder = 0
+      Text = '918'
+    end
+    object EditW2_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 36
+      Width = 64
+      TabOrder = 1
+      Text = '297'
+    end
+    object EditW3_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 64
+      Width = 64
+      TabOrder = 2
+      Text = '510'
+    end
+    object EditW4_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 90
+      Width = 64
+      TabOrder = 3
+      Text = '5'
+    end
+    object EditW5_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 150
+      Width = 64
+      TabOrder = 4
+      Text = '500'
+    end
+    object EditPValue: TEdit
+      Left = 230
+      Height = 27
+      Top = 64
+      Width = 40
+      TabOrder = 5
+      Text = '0'
+    end
+    object EditW6_badi: TEdit
+      Left = 94
+      Height = 27
+      Top = 119
+      Width = 64
+      TabOrder = 6
+      Text = '500'
+    end
+    object EditDValue: TEdit
+      Left = 230
+      Height = 27
+      Top = 31
+      Width = 40
+      TabOrder = 7
+      Text = '1.2'
+    end
+    object EditW7_badi: TEdit
+      Left = 230
+      Height = 27
+      Top = 150
+      Width = 64
+      TabOrder = 8
+      Text = '505'
+    end
+  end
+  object difCB: TCheckBox
+    Left = 8
+    Height = 24
+    Top = 392
+    Width = 103
+    Caption = 'Differential'
+    TabOrder = 5
+  end
+  object GroupBoxModelParams: TGroupBox
+    Left = 8
+    Height = 112
+    Top = 439
+    Width = 160
+    Caption = 'Model Parameters '
+    ClientHeight = 93
+    ClientWidth = 156
+    TabOrder = 6
+    object Label8: TLabel
+      Left = 6
+      Height = 17
+      Top = 10
+      Width = 28
+      Caption = 'Tao:'
+      ParentColor = False
+    end
+    object Label15: TLabel
+      Left = 6
+      Height = 17
+      Top = 67
+      Width = 43
+      Caption = 'Vmax:'
+      ParentColor = False
+    end
+    object Label16: TLabel
+      Left = 6
+      Height = 17
+      Top = 35
+      Width = 29
+      Caption = 'K, b:'
+      ParentColor = False
+    end
+    object EditTao: TEdit
+      Left = 46
+      Height = 27
+      Top = 2
+      Width = 73
+      TabOrder = 0
+      Text = '0.1'
+    end
+    object EditVMax: TEdit
+      Left = 48
+      Height = 27
+      Top = 63
+      Width = 86
+      TabOrder = 1
+      Text = '0.7'
+    end
+    object EditTauLineK: TEdit
+      Left = 46
+      Height = 27
+      Top = 31
+      Width = 49
+      TabOrder = 2
+      Text = '1'
+    end
+    object EditTauLineB: TEdit
+      Left = 94
+      Height = 27
+      Top = 31
+      Width = 40
+      TabOrder = 3
+      Text = '-0.7'
+    end
+    object CheckBoxTauLine: TCheckBox
+      Left = 126
+      Height = 24
+      Top = 2
+      Width = 24
+      TabOrder = 4
+    end
+  end
+  object GroupBox2: TGroupBox
+    Left = 384
+    Height = 144
+    Top = 439
+    Width = 160
+    Caption = 'Mates'
+    ClientHeight = 125
+    ClientWidth = 156
+    TabOrder = 7
+    object Label18: TLabel
+      Left = 9
+      Height = 17
+      Top = -1
+      Width = 50
+      Caption = 'Mate 1:'
+      ParentColor = False
+    end
+    object Label19: TLabel
+      Left = 81
+      Height = 17
+      Top = -1
+      Width = 50
+      Caption = 'Mate 2:'
+      ParentColor = False
+    end
+    object Label20: TLabel
+      Left = 9
+      Height = 17
+      Top = 63
+      Width = 50
+      Caption = 'Mate 3:'
+      ParentColor = False
+    end
+    object Label21: TLabel
+      Left = 81
+      Height = 17
+      Top = 63
+      Width = 50
+      Caption = 'Mate 4:'
+      ParentColor = False
+    end
+    object ComboBoxMate1: TComboBox
+      Left = 6
+      Height = 29
+      Top = 23
+      Width = 56
+      ItemHeight = 0
+      TabOrder = 0
+      Text = '0'
+    end
+    object ComboBoxMate2: TComboBox
+      Left = 76
+      Height = 29
+      Top = 23
+      Width = 55
+      ItemHeight = 0
+      TabOrder = 1
+      Text = '0'
+    end
+    object ComboBoxMate3: TComboBox
+      Left = 6
+      Height = 29
+      Top = 87
+      Width = 56
+      ItemHeight = 0
+      TabOrder = 2
+      Text = '0'
+    end
+    object ComboBoxMate4: TComboBox
+      Left = 76
+      Height = 29
+      Top = 87
+      Width = 55
+      ItemHeight = 0
+      TabOrder = 3
+      Text = '0'
+    end
+  end
+  object edk1: TEdit
+    Left = 48
+    Height = 27
+    Top = 560
+    Width = 48
+    TabOrder = 8
+    Text = '1.5'
+  end
+  object edk2: TEdit
+    Left = 160
+    Height = 27
+    Top = 560
+    Width = 48
+    TabOrder = 9
+    Text = '0.5'
+  end
+  object GroupBoxOtherPars: TGroupBox
+    Left = 176
+    Height = 112
+    Top = 440
+    Width = 200
+    Caption = 'Simulation Options '
+    ClientHeight = 93
+    ClientWidth = 196
+    TabOrder = 10
+    object CheckBoxPropSat: TCheckBox
+      Left = 7
+      Height = 24
+      Top = 7
+      Width = 137
+      Caption = 'Prop. Saturation'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CheckBoxSimDynamicsR: TCheckBox
+      Left = 6
+      Height = 24
+      Top = 31
+      Width = 167
+      Caption = 'Sim. Dynamics Robot'
+      TabOrder = 1
+    end
+    object CheckBoxSimDynamicsM: TCheckBox
+      Left = 7
+      Height = 24
+      Top = 57
+      Width = 167
+      Caption = 'Sim. Dynamics Mates'
+      TabOrder = 2
+    end
+  end
+  object FormStorage: TIniPropStorage
+    StoredValues = <>
+    left = 108
+    top = 196
+  end
+end

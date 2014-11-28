@@ -1,0 +1,159 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFormMPC','FORMDATA',[
+  'TPF0'#8'TFormMPC'#7'FormMPC'#4'Left'#3#200#2#6'Height'#3'R'#2#3'Top'#2'F'#5
+  +'Width'#3'('#2#7'Caption'#6#14'Control Module'#12'ClientHeight'#3'R'#2#11'Cl'
+  +'ientWidth'#3'('#2#10'LCLVersion'#6#7'1.2.6.0'#0#6'TLabel'#6'Label1'#4'Left'
+  +#3#232#0#6'Height'#2#17#3'Top'#3'7'#2#5'Width'#2'>'#7'Caption'#6#9'Distance:'
+  +#11'ParentColor'#8#0#0#6'TLabel'#7'Label24'#4'Left'#2#16#6'Height'#2#17#3'To'
+  +'p'#3'8'#2#5'Width'#2#17#7'Caption'#6#2'K1'#11'ParentColor'#8#0#0#6'TLabel'#7
+  +'Label25'#4'Left'#3#128#0#6'Height'#2#17#3'Top'#3'7'#2#5'Width'#2#17#7'Capti'
+  +'on'#6#2'K2'#11'ParentColor'#8#0#0#9'TGroupBox'#13'GroupBoxDebug'#4'Left'#2#8
+  +#6'Height'#3#128#1#3'Top'#2#0#5'Width'#3#225#0#7'Caption'#6#5'Debug'#12'Clie'
+  +'ntHeight'#3'm'#1#11'ClientWidth'#3#221#0#8'TabOrder'#2#0#0#5'TMemo'#9'MemoD'
+  +'ebug'#4'Left'#2#6#6'Height'#3'b'#1#3'Top'#2#5#5'Width'#3#208#0#13'Lines.Str'
+  +'ings'#1#6#0#0#8'TabOrder'#2#0#0#0#0#5'TEdit'#11'EditP1_badi'#4'Left'#3'-'#1
+  +#6'Height'#2#27#3'Top'#3'.'#2#5'Width'#2'0'#8'TabOrder'#2#1#4'Text'#6#3'1.2'
+  +#0#0#7'TButton'#29'ButtonSetBallAtDistanceInline'#4'Left'#3#128#0#6'Height'#2
+  +'.'#3'Top'#3#130#1#5'Width'#2'h'#7'Caption'#6#3'Set'#8'TabOrder'#2#2#0#0#9'T'
+  +'GroupBox'#9'GroupBox1'#4'Left'#3#240#0#6'Height'#3#232#0#3'Top'#2#0#5'Width'
+  +#3'1'#1#7'Caption'#6#14'MPC Parameters'#12'ClientHeight'#3#213#0#11'ClientWi'
+  +'dth'#3'-'#1#8'TabOrder'#2#3#0#12'TLabeledEdit'#6'EditN2'#4'Left'#2'>'#6'Hei'
+  +'ght'#2#27#3'Top'#2#23#5'Width'#2'( EditLabel.AnchorSideLeft.Control'#7#6'Ed'
+  +'itN2!EditLabel.AnchorSideRight.Control'#7#6'EditN2'#30'EditLabel.AnchorSide'
+  +'Right.Side'#7#9'asrBottom"EditLabel.AnchorSideBottom.Control'#7#6'EditN2'#14
+  +'EditLabel.Left'#2'>'#16'EditLabel.Height'#2#17#13'EditLabel.Top'#2#3#15'Edi'
+  +'tLabel.Width'#2'('#17'EditLabel.Caption'#6#3'N2:'#21'EditLabel.ParentColor'
+  +#8#8'TabOrder'#2#0#4'Text'#6#1'7'#0#0#12'TLabeledEdit'#6'EditNu'#4'Left'#2'l'
+  +#6'Height'#2#27#3'Top'#2#23#5'Width'#2'( EditLabel.AnchorSideLeft.Control'#7
+  +#6'EditNu!EditLabel.AnchorSideRight.Control'#7#6'EditNu'#30'EditLabel.Anchor'
+  +'SideRight.Side'#7#9'asrBottom"EditLabel.AnchorSideBottom.Control'#7#6'EditN'
+  +'u'#14'EditLabel.Left'#2'l'#16'EditLabel.Height'#2#17#13'EditLabel.Top'#2#3
+  +#15'EditLabel.Width'#2'('#17'EditLabel.Caption'#6#3'Nu:'#21'EditLabel.Parent'
+  +'Color'#8#8'TabOrder'#2#1#4'Text'#6#1'2'#0#0#9'TGroupBox'#21'GroupBoxOptimiz'
+  +'erPars'#4'Left'#2#14#6'Height'#2'x'#3'Top'#2'7'#5'Width'#3#242#0#7'Caption'
+  +#6#20'Optimizer Parameters'#12'ClientHeight'#2'e'#11'ClientWidth'#3#238#0#8
+  +'TabOrder'#2#2#0#6'TLabel'#6'Label2'#4'Left'#2#7#6'Height'#2#17#3'Top'#2#18#5
+  +'Width'#2'0'#7'Caption'#6#7'IT Max:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label'
+  +'4'#4'Left'#2#14#6'Height'#2#17#3'Top'#2'0'#5'Width'#2''''#7'Caption'#6#6'de'
+  +'lta:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label9'#4'Left'#3#128#0#6'Height'#2
+  +#17#3'Top'#2#18#5'Width'#2'"'#7'Caption'#6#5'Eta+:'#11'ParentColor'#8#0#0#6
+  +'TLabel'#7'Label10'#4'Left'#3#134#0#6'Height'#2#17#3'Top'#2'0'#5'Width'#2#30
+  +#7'Caption'#6#5'Eta-:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label5'#4'Left'#2#14
+  +#6'Height'#2#17#3'Top'#2'O'#5'Width'#2'.'#7'Caption'#6#7'J Stop:'#11'ParentC'
+  +'olor'#8#0#0#6'TLabel'#6'Label7'#4'Left'#3#130#0#6'Height'#2#17#3'Top'#2'O'#5
+  +'Width'#2')'#7'Caption'#6#6'alpha:'#11'ParentColor'#8#0#0#5'TEdit'#9'EditMax'
+  +'It'#4'Left'#2'>'#6'Height'#2#27#3'Top'#2#9#5'Width'#2'8'#8'TabOrder'#2#0#4
+  +'Text'#6#2'20'#0#0#5'TEdit'#9'EditDelta'#4'Left'#2'>'#6'Height'#2#27#3'Top'#2
+  +''''#5'Width'#2'8'#8'TabOrder'#2#1#4'Text'#6#4'0.15'#0#0#5'TEdit'#11'EditEta'
+  +'Plus'#4'Left'#3#174#0#6'Height'#2#27#3'Top'#2#9#5'Width'#2'8'#8'TabOrder'#2
+  +#2#4'Text'#6#3'1.2'#0#0#5'TEdit'#12'EditEtaMinus'#4'Left'#3#174#0#6'Height'#2
+  +#27#3'Top'#2''''#5'Width'#2'8'#8'TabOrder'#2#3#4'Text'#6#3'0.8'#0#0#5'TEdit'
+  +#9'EditJStop'#4'Left'#2'>'#6'Height'#2#27#3'Top'#2'G'#5'Width'#2'8'#8'TabOrd'
+  +'er'#2#4#4'Text'#6#5'0.005'#0#0#5'TEdit'#11'EditSDAlpha'#4'Left'#3#174#0#6'H'
+  +'eight'#2#27#3'Top'#2'G'#5'Width'#2'8'#8'TabOrder'#2#5#4'Text'#6#4'0.15'#0#0
+  +#0#9'TCheckBox'#14'CheckBoxEnable'#4'Left'#2#14#6'Height'#2#24#3'Top'#3#183#0
+  +#5'Width'#2'G'#7'Caption'#6#6'Enable'#8'TabOrder'#2#3#0#0#12'TLabeledEdit'#6
+  +'EditL1'#4'Left'#3#158#0#6'Height'#2#27#3'Top'#2#23#5'Width'#2'( EditLabel.A'
+  +'nchorSideLeft.Control'#7#6'EditL1!EditLabel.AnchorSideRight.Control'#7#6'Ed'
+  +'itL1'#30'EditLabel.AnchorSideRight.Side'#7#9'asrBottom"EditLabel.AnchorSide'
+  +'Bottom.Control'#7#6'EditL1'#14'EditLabel.Left'#3#158#0#16'EditLabel.Height'
+  +#2#17#13'EditLabel.Top'#2#3#15'EditLabel.Width'#2'('#17'EditLabel.Caption'#6
+  +#3'L1:'#21'EditLabel.ParentColor'#8#8'TabOrder'#2#4#4'Text'#6#3'918'#0#0#12
+  +'TLabeledEdit'#6'EditL2'#4'Left'#3#206#0#6'Height'#2#27#3'Top'#2#23#5'Width'
+  +#2'( EditLabel.AnchorSideLeft.Control'#7#6'EditL2!EditLabel.AnchorSideRight.'
+  +'Control'#7#6'EditL2'#30'EditLabel.AnchorSideRight.Side'#7#9'asrBottom"EditL'
+  +'abel.AnchorSideBottom.Control'#7#6'EditL2'#14'EditLabel.Left'#3#206#0#16'Ed'
+  +'itLabel.Height'#2#17#13'EditLabel.Top'#2#3#15'EditLabel.Width'#2'('#17'Edit'
+  ,'Label.Caption'#6#3'L2:'#21'EditLabel.ParentColor'#8#8'TabOrder'#2#5#4'Text'
+  +#6#3'500'#0#0#12'TLabeledEdit'#6'EditL3'#4'Left'#3#254#0#6'Height'#2#27#3'To'
+  +'p'#2#23#5'Width'#2'( EditLabel.AnchorSideLeft.Control'#7#6'EditL3!EditLabel'
+  +'.AnchorSideRight.Control'#7#6'EditL3'#30'EditLabel.AnchorSideRight.Side'#7#9
+  +'asrBottom"EditLabel.AnchorSideBottom.Control'#7#6'EditL3'#14'EditLabel.Left'
+  +#3#254#0#16'EditLabel.Height'#2#17#13'EditLabel.Top'#2#3#15'EditLabel.Width'
+  +#2'('#17'EditLabel.Caption'#6#3'L3:'#21'EditLabel.ParentColor'#8#8'TabOrder'
+  +#2#6#4'Text'#6#1'5'#0#0#12'TLabeledEdit'#6'EditN1'#4'Left'#2#14#6'Height'#2
+  +#27#3'Top'#2#23#5'Width'#2'('#5'Color'#7#6'clNone EditLabel.AnchorSideLeft.C'
+  +'ontrol'#7#6'EditN1!EditLabel.AnchorSideRight.Control'#7#6'EditN1'#30'EditLa'
+  +'bel.AnchorSideRight.Side'#7#9'asrBottom"EditLabel.AnchorSideBottom.Control'
+  +#7#6'EditN1'#14'EditLabel.Left'#2#14#16'EditLabel.Height'#2#17#13'EditLabel.'
+  +'Top'#2#3#15'EditLabel.Width'#2'('#17'EditLabel.Caption'#6#3'N1:'#21'EditLab'
+  +'el.ParentColor'#8#8'TabOrder'#2#7#4'Text'#6#1'1'#0#0#0#9'TGroupBox'#9'Group'
+  +'Box3'#4'Left'#3#240#0#6'Height'#3#200#0#3'Top'#3#232#0#5'Width'#3'1'#1#7'Ca'
+  +'ption'#6#17'Formation Control'#12'ClientHeight'#3#181#0#11'ClientWidth'#3'-'
+  +#1#8'TabOrder'#2#4#0#6'TLabel'#7'Label13'#4'Left'#2#6#6'Height'#2#17#3'Top'#2
+  +#15#5'Width'#2'>'#7'Caption'#6#9'Distance:'#11'ParentColor'#8#0#0#6'TLabel'#7
+  +'Label12'#4'Left'#2#6#6'Height'#2#17#3'Top'#2'+'#5'Width'#2'R'#7'Caption'#6
+  +#12'Orientation:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label11'#4'Left'#2#6#6'H'
+  +'eight'#2#17#3'Top'#2'G'#5'Width'#2'<'#7'Caption'#6#9'Position:'#11'ParentCo'
+  +'lor'#8#0#0#6'TLabel'#6'Label6'#4'Left'#2#6#6'Height'#2#17#3'Top'#2'c'#5'Wid'
+  +'th'#2','#7'Caption'#6#7'Effort:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label14'
+  +#4'Left'#2#6#6'Height'#2#17#3'Top'#3#159#0#5'Width'#2'G'#7'Caption'#6#10'Obs'
+  +'tacles:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label3'#4'Left'#3#166#0#6'Height'
+  +#2#17#3'Top'#2'G'#5'Width'#2'6'#7'Caption'#6#8'P Value:'#11'ParentColor'#8#0
+  +#0#6'TLabel'#7'Label17'#4'Left'#2#6#6'Height'#2#17#3'Top'#3#128#0#5'Width'#2
+  +'.'#7'Caption'#6#6'Mates:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label22'#4'Left'
+  +#3#166#0#6'Height'#2#17#3'Top'#2'&'#5'Width'#2'7'#7'Caption'#6#8'D Value:'#11
+  +'ParentColor'#8#0#0#6'TLabel'#7'Label23'#4'Left'#3#206#0#6'Height'#2#17#3'To'
+  +'p'#2#127#5'Width'#2'U'#7'Caption'#6#12'Covariances:'#11'ParentColor'#8#0#0#5
+  +'TEdit'#11'EditW1_badi'#4'Left'#2'^'#6'Height'#2#27#3'Top'#2#7#5'Width'#2'@'
+  +#8'TabOrder'#2#0#4'Text'#6#3'918'#0#0#5'TEdit'#11'EditW2_badi'#4'Left'#2'^'#6
+  +'Height'#2#27#3'Top'#2'$'#5'Width'#2'@'#8'TabOrder'#2#1#4'Text'#6#3'297'#0#0
+  +#5'TEdit'#11'EditW3_badi'#4'Left'#2'^'#6'Height'#2#27#3'Top'#2'@'#5'Width'#2
+  +'@'#8'TabOrder'#2#2#4'Text'#6#3'510'#0#0#5'TEdit'#11'EditW4_badi'#4'Left'#2
+  +'^'#6'Height'#2#27#3'Top'#2'Z'#5'Width'#2'@'#8'TabOrder'#2#3#4'Text'#6#1'5'#0
+  +#0#5'TEdit'#11'EditW5_badi'#4'Left'#2'^'#6'Height'#2#27#3'Top'#3#150#0#5'Wid'
+  +'th'#2'@'#8'TabOrder'#2#4#4'Text'#6#3'500'#0#0#5'TEdit'#10'EditPValue'#4'Lef'
+  +'t'#3#230#0#6'Height'#2#27#3'Top'#2'@'#5'Width'#2'('#8'TabOrder'#2#5#4'Text'
+  +#6#1'0'#0#0#5'TEdit'#11'EditW6_badi'#4'Left'#2'^'#6'Height'#2#27#3'Top'#2'w'
+  +#5'Width'#2'@'#8'TabOrder'#2#6#4'Text'#6#3'500'#0#0#5'TEdit'#10'EditDValue'#4
+  +'Left'#3#230#0#6'Height'#2#27#3'Top'#2#31#5'Width'#2'('#8'TabOrder'#2#7#4'Te'
+  +'xt'#6#3'1.2'#0#0#5'TEdit'#11'EditW7_badi'#4'Left'#3#230#0#6'Height'#2#27#3
+  +'Top'#3#150#0#5'Width'#2'@'#8'TabOrder'#2#8#4'Text'#6#3'505'#0#0#0#9'TCheckB'
+  +'ox'#5'difCB'#4'Left'#2#8#6'Height'#2#24#3'Top'#3#136#1#5'Width'#2'g'#7'Capt'
+  +'ion'#6#12'Differential'#8'TabOrder'#2#5#0#0#9'TGroupBox'#19'GroupBoxModelPa'
+  +'rams'#4'Left'#2#8#6'Height'#2'p'#3'Top'#3#183#1#5'Width'#3#160#0#7'Caption'
+  +#6#17'Model Parameters '#12'ClientHeight'#2']'#11'ClientWidth'#3#156#0#8'Tab'
+  +'Order'#2#6#0#6'TLabel'#6'Label8'#4'Left'#2#6#6'Height'#2#17#3'Top'#2#10#5'W'
+  +'idth'#2#28#7'Caption'#6#4'Tao:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label15'#4
+  +'Left'#2#6#6'Height'#2#17#3'Top'#2'C'#5'Width'#2'+'#7'Caption'#6#5'Vmax:'#11
+  +'ParentColor'#8#0#0#6'TLabel'#7'Label16'#4'Left'#2#6#6'Height'#2#17#3'Top'#2
+  +'#'#5'Width'#2#29#7'Caption'#6#5'K, b:'#11'ParentColor'#8#0#0#5'TEdit'#7'Edi'
+  +'tTao'#4'Left'#2'.'#6'Height'#2#27#3'Top'#2#2#5'Width'#2'I'#8'TabOrder'#2#0#4
+  +'Text'#6#3'0.1'#0#0#5'TEdit'#8'EditVMax'#4'Left'#2'0'#6'Height'#2#27#3'Top'#2
+  +'?'#5'Width'#2'V'#8'TabOrder'#2#1#4'Text'#6#3'0.7'#0#0#5'TEdit'#12'EditTauLi'
+  +'neK'#4'Left'#2'.'#6'Height'#2#27#3'Top'#2#31#5'Width'#2'1'#8'TabOrder'#2#2#4
+  +'Text'#6#1'1'#0#0#5'TEdit'#12'EditTauLineB'#4'Left'#2'^'#6'Height'#2#27#3'To'
+  +'p'#2#31#5'Width'#2'('#8'TabOrder'#2#3#4'Text'#6#4'-0.7'#0#0#9'TCheckBox'#15
+  +'CheckBoxTauLine'#4'Left'#2'~'#6'Height'#2#24#3'Top'#2#2#5'Width'#2#24#8'Tab'
+  +'Order'#2#4#0#0#0#9'TGroupBox'#9'GroupBox2'#4'Left'#3#128#1#6'Height'#3#144#0
+  +#3'Top'#3#183#1#5'Width'#3#160#0#7'Caption'#6#5'Mates'#12'ClientHeight'#2'}'
+  +#11'ClientWidth'#3#156#0#8'TabOrder'#2#7#0#6'TLabel'#7'Label18'#4'Left'#2#9#6
+  ,'Height'#2#17#3'Top'#2#255#5'Width'#2'2'#7'Caption'#6#7'Mate 1:'#11'ParentCo'
+  +'lor'#8#0#0#6'TLabel'#7'Label19'#4'Left'#2'Q'#6'Height'#2#17#3'Top'#2#255#5
+  +'Width'#2'2'#7'Caption'#6#7'Mate 2:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label'
+  +'20'#4'Left'#2#9#6'Height'#2#17#3'Top'#2'?'#5'Width'#2'2'#7'Caption'#6#7'Mat'
+  +'e 3:'#11'ParentColor'#8#0#0#6'TLabel'#7'Label21'#4'Left'#2'Q'#6'Height'#2#17
+  +#3'Top'#2'?'#5'Width'#2'2'#7'Caption'#6#7'Mate 4:'#11'ParentColor'#8#0#0#9'T'
+  +'ComboBox'#13'ComboBoxMate1'#4'Left'#2#6#6'Height'#2#29#3'Top'#2#23#5'Width'
+  +#2'8'#10'ItemHeight'#2#0#8'TabOrder'#2#0#4'Text'#6#1'0'#0#0#9'TComboBox'#13
+  +'ComboBoxMate2'#4'Left'#2'L'#6'Height'#2#29#3'Top'#2#23#5'Width'#2'7'#10'Ite'
+  +'mHeight'#2#0#8'TabOrder'#2#1#4'Text'#6#1'0'#0#0#9'TComboBox'#13'ComboBoxMat'
+  +'e3'#4'Left'#2#6#6'Height'#2#29#3'Top'#2'W'#5'Width'#2'8'#10'ItemHeight'#2#0
+  +#8'TabOrder'#2#2#4'Text'#6#1'0'#0#0#9'TComboBox'#13'ComboBoxMate4'#4'Left'#2
+  +'L'#6'Height'#2#29#3'Top'#2'W'#5'Width'#2'7'#10'ItemHeight'#2#0#8'TabOrder'#2
+  +#3#4'Text'#6#1'0'#0#0#0#5'TEdit'#4'edk1'#4'Left'#2'0'#6'Height'#2#27#3'Top'#3
+  +'0'#2#5'Width'#2'0'#8'TabOrder'#2#8#4'Text'#6#3'1.5'#0#0#5'TEdit'#4'edk2'#4
+  +'Left'#3#160#0#6'Height'#2#27#3'Top'#3'0'#2#5'Width'#2'0'#8'TabOrder'#2#9#4
+  +'Text'#6#3'0.5'#0#0#9'TGroupBox'#17'GroupBoxOtherPars'#4'Left'#3#176#0#6'Hei'
+  +'ght'#2'p'#3'Top'#3#184#1#5'Width'#3#200#0#7'Caption'#6#19'Simulation Option'
+  +'s '#12'ClientHeight'#2']'#11'ClientWidth'#3#196#0#8'TabOrder'#2#10#0#9'TChe'
+  +'ckBox'#15'CheckBoxPropSat'#4'Left'#2#7#6'Height'#2#24#3'Top'#2#7#5'Width'#3
+  +#137#0#7'Caption'#6#16'Prop. Saturation'#7'Checked'#9#5'State'#7#9'cbChecked'
+  +#8'TabOrder'#2#0#0#0#9'TCheckBox'#20'CheckBoxSimDynamicsR'#4'Left'#2#6#6'Hei'
+  +'ght'#2#24#3'Top'#2#31#5'Width'#3#167#0#7'Caption'#6#19'Sim. Dynamics Robot'
+  +#8'TabOrder'#2#1#0#0#9'TCheckBox'#20'CheckBoxSimDynamicsM'#4'Left'#2#7#6'Hei'
+  +'ght'#2#24#3'Top'#2'9'#5'Width'#3#167#0#7'Caption'#6#19'Sim. Dynamics Mates'
+  +#8'TabOrder'#2#2#0#0#0#15'TIniPropStorage'#11'FormStorage'#12'StoredValues'
+  +#14#0#4'left'#2'l'#3'top'#3#196#0#0#0#0
+]);

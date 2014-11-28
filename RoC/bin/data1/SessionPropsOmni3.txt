@@ -1,0 +1,6 @@
+ComPort.BaudRate
+ComPort.Device
+Timer.Interval
+CBLan.Checked
+FOmni.Top
+FOmni.Left

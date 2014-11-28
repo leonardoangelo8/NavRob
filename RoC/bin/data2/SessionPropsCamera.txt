@@ -1,0 +1,11 @@
+EditCamZadv.Text
+EditCamZBall.Text
+EditCamZBlack.Text
+EditCamZGoal.Text
+EditCamZrobot.Text
+EditLCamAngle.Text
+EditLCamDist.Text
+EditLCamHeight.Text
+EditLCamMt.Text
+FCamera.Top
+FCamera.Left

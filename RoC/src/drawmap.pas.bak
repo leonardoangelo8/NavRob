@@ -1,0 +1,231 @@
+unit drawmap;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, Main, Graphics, Controls, Forms, Robots, Tatic, Astar,
+  Field;
+
+const
+   RobotDrawingVertex: array[0..13] of TPos=(
+      (x:-0.21; y:0.065), (x:0.1; y:0.24), (x:0.21; y:0.175),
+      (x:0.21; y:0.125),  (x:0.26; y:0.125), (x:0.26; y:0.1), (x:0.21; y:0.1),
+      (x:0.21; y:-0.1),  (x:0.26; y:-0.1), (x:0.26; y:-0.125), (x:0.21; y:-0.125),
+      (x:0.21; y:-0.175), (x:0.1; y:-0.24), (x:-0.21; y:-0.065));
+
+procedure WorldToMapDim(dw: double; var dm: integer);
+procedure WorldToMap(xw,yw: double; var xm: integer; var ym: integer);
+function  WorldToMapP(xw,yw: double):TPoint;
+procedure MapToWorld( xm, ym: integer; var xw,yw: double);
+procedure DrawRobot(var RS: TRobotState; extraColor: Tcolor; CNV: TCanvas);
+procedure DrawTraj(var Traj: TTrajectory; CNV: TCanvas);
+procedure DrawRobotText(var RS: TRobotState; extraColor: Tcolor; CNV: TCanvas);
+procedure DrawFieldMap(field_canvas: TCanvas);
+procedure DrawObstacles(var Obs: TObstacles);
+function Get24Color(color: integer): Tcolor;
+
+var
+  FieldImageWidth, FieldImageHeight: integer;
+  Dfieldmag: double;
+
+implementation
+
+uses Utils;
+
+procedure WorldToMapDim(dw: double; var dm: integer);
+begin
+  dm:=round(dw*Dfieldmag);
+end;
+
+procedure WorldToMap(xw,yw: double; var xm: integer; var ym: integer);
+begin
+  xm:=round(FieldImageWidth/2+xw*Dfieldmag);
+  ym:=round(FieldImageHeight/2-yw*Dfieldmag);
+end;
+
+function WorldToMapP(xw,yw: double):TPoint;
+begin
+  result.x:=round(FieldImageWidth/2+xw*Dfieldmag);
+  result.y:=round(FieldImageHeight/2-yw*Dfieldmag);
+end;
+
+procedure MapToWorld( xm, ym: integer; var xw,yw: double);
+begin
+  xw:=(xm-FieldImageWidth/2)/Dfieldmag;
+  yw:=(FieldImageHeight/2-ym)/Dfieldmag;
+end;
+
+procedure DrawTraj(var Traj: TTrajectory; CNV: TCanvas);
+var i,x1,y1: integer;
+begin
+  with CNV do begin //tcanvas
+    pen.color:=clyellow;
+    brush.color:=clBlack;
+    brush.style:=bsSolid;
+
+    WorldToMap(RobotState[myNumber].x,RobotState[myNumber].y,x1,y1);
+    moveto(x1,y1);
+    for i := 0 to traj.count-1 do begin
+      with traj.pts[i] do begin
+        WorldToMap(x,y,x1,y1);
+        lineto(x1,y1);
+      end;
+    end;
+  end;
+end;
+
+
+procedure DrawRobot(var RS: TRobotState; extraColor: Tcolor; CNV: TCanvas);
+var i,x1,y1: integer;
+    xr,yr: double;
+    Pts: array[Low(RobotDrawingVertex)..High(RobotDrawingVertex)] of TPoint;
+begin
+  with CNV do begin //tcanvas
+    pen.color:=clblack;
+    brush.color:=clBlack;
+    brush.style:=bsSolid;
+
+    for i:=Low(RobotDrawingVertex) to High(RobotDrawingVertex) do begin
+      RotateAndTranslate(xr,yr,RobotDrawingVertex[i].x*1.25,RobotDrawingVertex[i].y*1.25,RS.x,RS.y,RS.teta);
+      WorldToMap(xr,yr,Pts[i].x,Pts[i].y);
+    end;
+    Polygon(Pts);
+
+    brush.color:=clgreen;
+    brush.style:=bsClear;
+
+    RotateAndTranslate(xr,yr,-0.08*1.25,0,RS.x,RS.y,RS.teta);
+    WorldToMap(xr,yr,x1,y1);
+
+    if RS.num=myNumber then begin
+      DrawCovElipse(RS.x,RS.y,RS.cov_x,RS.cov_y,RS.cov_xy,10,CNV);
+    end;
+  end;
+end;
+
+function Get24Color(color: integer): Tcolor;
+var altColor: integer;
+begin
+  altColor:=color;
+  result:=colorcolor24[altColor];
+end;
+
+procedure DrawFieldMap(field_canvas: TCanvas);
+var x1,y1,x2,y2,r,d: integer;
+begin
+  with field_canvas, FieldDims do begin //tcanvas
+    //Retângulo do campo
+    brush.Style:=bsSolid;
+    brush.color:=clgreen;
+    pen.color:=clgreen;
+    rectangle(0,0,FieldImageWidth,FieldImageHeight);
+    //Linha do meio do campo
+    WorldToMap(-FieldDepth/2,Fieldwidth/2,x1,y1);
+    WorldToMap(FieldDepth/2,-Fieldwidth/2,x2,y2);
+    brush.style:=bsClear;
+    pen.color:=clLtGray;
+    pen.Width:=1;
+    Polyline([point((x1+x2) div 2,y1),point((x1+x2) div 2,y2)]);
+    //Ângulos do Escanteio
+    WorldtoMapdim(CornerDist,d);
+    arc(x1-d,y1-d,x1+d,y1+d,x1,y2,x2,y1); //|¨
+    arc(x1-d,y2-d,x1+d,y2+d,x2,y2,x1,y1); //¨|
+    arc(x2-d,y1-d,x2+d,y1+d,x1,y1,x2,y2); //|_
+    arc(x2-d,y2-d,x2+d,y2+d,x2,y1,x1,y2); //_|
+    //Limites do campo em preto
+    pen.Width:=2;
+    pen.color:=clBlack;
+    Polyline([WorldToMapP(BoundaryDepth/2,BoundaryWidth/2), WorldToMapP(-BoundaryDepth/2,BoundaryWidth/2),
+              WorldToMapP(-BoundaryDepth/2,-BoundaryWidth/2), WorldToMapP(BoundaryDepth/2,-BoundaryWidth/2),
+              WorldToMapP(BoundaryDepth/2,BoundaryWidth/2)]);
+
+    //Gol
+    pen.color:=clLtGray;
+    Polyline([point(x1,y1),point(x2,y1),point(x2,y2),point(x1,y2),point(x1,y1)]);
+    //Circulo maior e menor do meio do campo
+    WorldtoMapdim(CircleRadius,r);
+    ellipse((x1+x2) div 2-r,(y1+y2) div 2-r,(x1+x2) div 2+r,(y1+y2) div 2+r);  // maior
+    ellipse((x1+x2) div 2-3,(y1+y2) div 2-3,(x1+x2) div 2+3,(y1+y2) div 2+3);  // menor
+    //Pequena e Grande Área de cada lado
+    Polyline([WorldToMapP(FieldDepth/2,AreaWidth/2), WorldToMapP(FieldDepth/2-AreaDepth,AreaWidth/2),
+             WorldToMapP(FieldDepth/2-AreaDepth,-AreaWidth/2), WorldToMapP(FieldDepth/2,-AreaWidth/2)]);
+    Polyline([WorldToMapP(-FieldDepth/2,AreaWidth/2), WorldToMapP(-FieldDepth/2+AreaDepth,AreaWidth/2),
+             WorldToMapP(-FieldDepth/2+AreaDepth,-AreaWidth/2), WorldToMapP(-FieldDepth/2,-AreaWidth/2)]);
+    Polyline([WorldToMapP(FieldDepth/2,KeeperAreaWidth/2), WorldToMapP(FieldDepth/2-KeeperAreaDepth,KeeperAreaWidth/2),
+             WorldToMapP(FieldDepth/2-KeeperAreaDepth,-KeeperAreaWidth/2), WorldToMapP(FieldDepth/2,-KeeperAreaWidth/2)]);
+    Polyline([WorldToMapP(-FieldDepth/2,KeeperAreaWidth/2), WorldToMapP(-FieldDepth/2+KeeperAreaDepth,KeeperAreaWidth/2),
+             WorldToMapP(-FieldDepth/2+KeeperAreaDepth,-KeeperAreaWidth/2), WorldToMapP(-FieldDepth/2,-KeeperAreaWidth/2)]);
+    //Gol Amarelo (Direita)
+    pen.color:=Get24Color(1);
+    Polyline([WorldToMapP(FieldDepth/2,GoalWidth/2),
+              WorldToMapP(FieldDepth/2+GoalDepth,GoalWidth/2),
+              WorldToMapP(FieldDepth/2+GoalDepth,-GoalWidth/2),
+              WorldToMapP(FieldDepth/2,-GoalWidth/2)]);
+    //Gol Azul (Esquerda)
+    pen.color:=Get24Color(2);
+    Polyline([WorldToMapP(-FieldDepth/2,GoalWidth/2),
+              WorldToMapP(-FieldDepth/2-GoalDepth,GoalWidth/2),
+              WorldToMapP(-FieldDepth/2-GoalDepth,-GoalWidth/2),
+              WorldToMapP(-FieldDepth/2,-GoalWidth/2)]);
+    pen.Width:=1;
+
+  end;
+end;
+
+procedure DrawRobotText(var RS: TRobotState; extraColor: Tcolor; CNV: TCanvas);
+var i,x1,y1: integer;
+    xr,yr: double;
+    Pts: array[Low(RobotDrawingVertex)..High(RobotDrawingVertex)] of TPoint;
+begin
+  with CNV do begin //tcanvas
+    pen.color:=clblack;
+    brush.color:=clBlack;
+    brush.style:=bsSolid;
+
+    for i:=Low(RobotDrawingVertex) to High(RobotDrawingVertex) do begin
+      RotateAndTranslate(xr,yr,RobotDrawingVertex[i].x*1.25,RobotDrawingVertex[i].y*1.25,RS.x,RS.y,RS.teta);
+      WorldToMap(xr,yr,Pts[i].x,Pts[i].y);
+    end;
+    Polygon(Pts);
+
+    brush.color:=clgreen;
+    brush.style:=bsClear;
+
+    RotateAndTranslate(xr,yr,-0.08*1.25,0,RS.x,RS.y,RS.teta);
+    WorldToMap(xr,yr,x1,y1);
+    font.Color:=CTeamColorColor24[TeamColor];
+
+    TextOut(x1-2,y1-5,inttostr(RS.num+1));
+
+    if RS.num=myNumber then begin
+      font.Color:=clWhite;
+      TextOut(x1-20,y1-20,format('%.1f,%.1f,%d',[RS.x,RS.Y,round(RS.teta/(2*pi)*360)]));
+      DrawCovElipse(RS.x,RS.y,RS.cov_x,RS.cov_y,RS.cov_xy,10,CNV);
+    end;
+  end;
+end;
+
+procedure DrawObstacles(var Obs: TObstacles);
+var r: double;
+    x1,y1,x2,y2: integer;
+    i: integer;
+begin
+  r:=0.10;
+  with FMain.ImageMap.canvas do begin //tcanvas
+    for i:=0 to Obs.count-1 do begin
+      brush.color:=colorcolor24[Obs.centers[i].color];
+      brush.style:=bsSolid;
+      pen.color:=clblack;
+
+      r:=Obs.Centers[i].r;
+      WorldToMap(Obs.centers[i].x-r,Obs.centers[i].y+r,x1,y1);
+      WorldToMap(Obs.centers[i].x+r,Obs.centers[i].y-r,x2,y2);
+      Ellipse(x1,y1,x2,y2);
+    end;
+  end;
+end;
+
+end.
+

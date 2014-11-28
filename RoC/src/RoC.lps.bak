@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="17">
+      <Unit0>
+        <Filename Value="RoC.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RoC"/>
+        <UsageCount Value="38"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="40" Y="24"/>
+        <UsageCount Value="38"/>
+        <Bookmarks Count="2">
+          <Item0 X="15" Y="638" ID="4"/>
+          <Item1 X="41" Y="685" ID="1"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="rocconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RoCConsts"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="21" Y="20"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="robots.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Robots"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="68"/>
+        <CursorPos X="50" Y="69"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="roles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Roles"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="25"/>
+        <CursorPos X="21" Y="37"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="tatic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Tatic"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="53"/>
+        <CursorPos X="10" Y="80"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="actions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Actions"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="30" Y="283"/>
+        <UsageCount Value="38"/>
+        <Bookmarks Count="1">
+          <Item0 X="1" Y="287" ID="3"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="astar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Astar"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="7" Y="23"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="tasks.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Tasks"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="75"/>
+        <CursorPos X="20" Y="89"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Utils"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="28"/>
+        <CursorPos X="10" Y="39"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="field.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FField"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Field"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="173"/>
+        <CursorPos X="30" Y="149"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="drawmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="drawmap"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="176"/>
+        <CursorPos X="43" Y="102"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="mpc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMPC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MPC"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="209"/>
+        <CursorPos X="1" Y="220"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="model.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="model"/>
+        <EditorIndex Value="11"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="param.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FParam"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Param"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="58"/>
+        <CursorPos X="13" Y="83"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="../../../../Desenvolvimento/lazarus/components/lnet/lib/lnet.pp"/>
+        <UnitName Value="lNet"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="312"/>
+        <CursorPos X="14" Y="328"/>
+        <UsageCount Value="9"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="../../../../Desenvolvimento/lazarus/lcl/include/customform.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2050"/>
+        <CursorPos X="1" Y="2062"/>
+        <UsageCount Value="9"/>
+      </Unit16>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="param.pas"/>
+        <Caret Line="92" Column="79" TopLine="80"/>
+      </Position1>
+      <Position2>
+        <Filename Value="param.pas"/>
+        <Caret Line="107" Column="3" TopLine="92"/>
+      </Position2>
+      <Position3>
+        <Filename Value="param.pas"/>
+        <Caret Line="41" Column="5" TopLine="32"/>
+      </Position3>
+      <Position4>
+        <Filename Value="param.pas"/>
+        <Caret Line="134" Column="1" TopLine="124"/>
+      </Position4>
+      <Position5>
+        <Filename Value="param.pas"/>
+        <Caret Line="147" Column="1" TopLine="131"/>
+      </Position5>
+      <Position6>
+        <Filename Value="param.pas"/>
+        <Caret Line="144" Column="1" TopLine="130"/>
+      </Position6>
+      <Position7>
+        <Filename Value="param.pas"/>
+        <Caret Line="142" Column="1" TopLine="126"/>
+      </Position7>
+      <Position8>
+        <Filename Value="param.pas"/>
+        <Caret Line="43" Column="1" TopLine="31"/>
+      </Position8>
+      <Position9>
+        <Filename Value="main.pas"/>
+        <Caret Line="575" Column="25" TopLine="546"/>
+      </Position9>
+      <Position10>
+        <Filename Value="main.pas"/>
+        <Caret Line="775" Column="3" TopLine="764"/>
+      </Position10>
+      <Position11>
+        <Filename Value="main.pas"/>
+        <Caret Line="672" Column="149" TopLine="547"/>
+      </Position11>
+      <Position12>
+        <Filename Value="main.pas"/>
+        <Caret Line="849" Column="3" TopLine="836"/>
+      </Position12>
+      <Position13>
+        <Filename Value="main.pas"/>
+        <Caret Line="737" Column="8" TopLine="632"/>
+      </Position13>
+      <Position14>
+        <Filename Value="main.pas"/>
+        <Caret Line="659" Column="41" TopLine="637"/>
+      </Position14>
+      <Position15>
+        <Filename Value="robots.pas"/>
+        <Caret Line="84" Column="97" TopLine="69"/>
+      </Position15>
+      <Position16>
+        <Filename Value="robots.pas"/>
+        <Caret Line="85" Column="33" TopLine="69"/>
+      </Position16>
+      <Position17>
+        <Filename Value="main.pas"/>
+        <Caret Line="659" Column="41" TopLine="637"/>
+      </Position17>
+      <Position18>
+        <Filename Value="main.pas"/>
+        <Caret Line="573" Column="7" TopLine="545"/>
+      </Position18>
+      <Position19>
+        <Filename Value="main.pas"/>
+        <Caret Line="651" Column="22" TopLine="631"/>
+      </Position19>
+      <Position20>
+        <Filename Value="main.pas"/>
+        <Caret Line="652" Column="22" TopLine="632"/>
+      </Position20>
+      <Position21>
+        <Filename Value="main.pas"/>
+        <Caret Line="651" Column="22" TopLine="631"/>
+      </Position21>
+      <Position22>
+        <Filename Value="main.pas"/>
+        <Caret Line="175" Column="16" TopLine="164"/>
+      </Position22>
+      <Position23>
+        <Filename Value="main.pas"/>
+        <Caret Line="355" Column="32" TopLine="344"/>
+      </Position23>
+      <Position24>
+        <Filename Value="main.pas"/>
+        <Caret Line="358" Column="41" TopLine="347"/>
+      </Position24>
+      <Position25>
+        <Filename Value="actions.pas"/>
+        <Caret Line="327" Column="3" TopLine="315"/>
+      </Position25>
+      <Position26>
+        <Filename Value="actions.pas"/>
+        <Caret Line="33" Column="108" TopLine="6"/>
+      </Position26>
+      <Position27>
+        <Filename Value="actions.pas"/>
+        <Caret Line="371" Column="3" TopLine="349"/>
+      </Position27>
+      <Position28>
+        <Filename Value="actions.pas"/>
+        <Caret Line="80" Column="3" TopLine="61"/>
+      </Position28>
+      <Position29>
+        <Filename Value="actions.pas"/>
+        <Caret Line="392" Column="88" TopLine="385"/>
+      </Position29>
+      <Position30>
+        <Filename Value="actions.pas"/>
+        <Caret Line="383" Column="13" TopLine="375"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

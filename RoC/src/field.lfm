@@ -1,0 +1,315 @@
+object FField: TFField
+  Left = 506
+  Height = 272
+  Top = 283
+  Width = 307
+  ActiveControl = EditDepth
+  Caption = 'Field'
+  ClientHeight = 272
+  ClientWidth = 307
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object Label26: TLabel
+    Left = 148
+    Height = 17
+    Top = 12
+    Width = 45
+    Caption = 'Width:'
+    ParentColor = False
+  end
+  object Label1: TLabel
+    Left = 4
+    Height = 17
+    Top = 12
+    Width = 45
+    Caption = 'Depth:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 148
+    Height = 17
+    Top = 36
+    Width = 79
+    Caption = 'Goal Width:'
+    ParentColor = False
+  end
+  object Label3: TLabel
+    Left = 4
+    Height = 17
+    Top = 36
+    Width = 79
+    Caption = 'Goal Depth:'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 148
+    Height = 17
+    Top = 84
+    Width = 80
+    Caption = 'Area Width:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 4
+    Height = 17
+    Top = 84
+    Width = 80
+    Caption = 'Area Depth:'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Left = 4
+    Height = 17
+    Top = 108
+    Width = 90
+    Caption = 'Circle Radius:'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 4
+    Height = 17
+    Top = 132
+    Width = 80
+    Caption = 'Corner Dist:'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 148
+    Height = 17
+    Top = 108
+    Width = 118
+    Caption = 'Corner Lines Dist:'
+    ParentColor = False
+  end
+  object Label9: TLabel
+    Left = 148
+    Height = 17
+    Top = 132
+    Width = 132
+    Caption = 'Corner Lines Width:'
+    ParentColor = False
+  end
+  object Label10: TLabel
+    Left = 4
+    Height = 17
+    Top = 156
+    Width = 83
+    Caption = 'Lines Width:'
+    ParentColor = False
+  end
+  object Label11: TLabel
+    Left = 4
+    Height = 17
+    Top = 216
+    Width = 134
+    Caption = 'Pole Section Height:'
+    ParentColor = False
+  end
+  object Label12: TLabel
+    Left = 148
+    Height = 17
+    Top = 156
+    Width = 118
+    Caption = 'Final Lines Width:'
+    ParentColor = False
+  end
+  object Label13: TLabel
+    Left = 4
+    Height = 17
+    Top = 180
+    Width = 112
+    Caption = 'Boundary Depth:'
+    ParentColor = False
+  end
+  object Label14: TLabel
+    Left = 148
+    Height = 17
+    Top = 180
+    Width = 112
+    Caption = 'Boundary Width:'
+    ParentColor = False
+  end
+  object Label15: TLabel
+    Left = 4
+    Height = 17
+    Top = 60
+    Width = 96
+    Caption = 'K. Area Depth:'
+    ParentColor = False
+  end
+  object Label16: TLabel
+    Left = 148
+    Height = 17
+    Top = 60
+    Width = 96
+    Caption = 'K. Area Width:'
+    ParentColor = False
+  end
+  object Label17: TLabel
+    Left = 4
+    Height = 17
+    Top = 244
+    Width = 62
+    Caption = 'Field size'
+    ParentColor = False
+  end
+  object EditWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 8
+    Width = 41
+    TabOrder = 0
+    Text = '5'
+  end
+  object EditDepth: TEdit
+    Left = 90
+    Height = 27
+    Top = 8
+    Width = 41
+    TabOrder = 1
+    Text = '10'
+  end
+  object EditGoalWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 32
+    Width = 41
+    TabOrder = 2
+    Text = '2'
+  end
+  object EditGoalDepth: TEdit
+    Left = 90
+    Height = 27
+    Top = 32
+    Width = 41
+    TabOrder = 3
+    Text = '0.5'
+  end
+  object EditAreaWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 80
+    Width = 41
+    TabOrder = 4
+    Text = '3'
+  end
+  object EditAreaDepth: TEdit
+    Left = 90
+    Height = 27
+    Top = 80
+    Width = 41
+    TabOrder = 5
+    Text = '1'
+  end
+  object EditCircleRadius: TEdit
+    Left = 90
+    Height = 27
+    Top = 104
+    Width = 41
+    TabOrder = 6
+    Text = '1'
+  end
+  object EditCornerDist: TEdit
+    Left = 90
+    Height = 27
+    Top = 128
+    Width = 41
+    TabOrder = 7
+    Text = '0.15'
+  end
+  object EditCornerLinesDist: TEdit
+    Left = 260
+    Height = 27
+    Top = 104
+    Width = 41
+    TabOrder = 8
+    Text = '0.3'
+  end
+  object EditLinesWidth: TEdit
+    Left = 90
+    Height = 27
+    Top = 152
+    Width = 41
+    TabOrder = 9
+    Text = '0.05'
+  end
+  object EditCornerLinesWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 128
+    Width = 41
+    TabOrder = 10
+    Text = '0.1'
+  end
+  object BRefresh: TButton
+    Left = 212
+    Height = 25
+    Top = 220
+    Width = 75
+    Caption = '&Refresh'
+    OnClick = BRefreshClick
+    TabOrder = 11
+  end
+  object EditPoleSectionHeight: TEdit
+    Left = 112
+    Height = 27
+    Top = 209
+    Width = 41
+    TabOrder = 12
+    Text = '0.05'
+  end
+  object EditFinalLinesWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 152
+    Width = 41
+    TabOrder = 13
+    Text = '0.12'
+  end
+  object EditBoundaryDepth: TEdit
+    Left = 90
+    Height = 27
+    Top = 176
+    Width = 41
+    TabOrder = 14
+    Text = '10'
+  end
+  object EditBoundaryWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 176
+    Width = 41
+    TabOrder = 15
+    Text = '5'
+  end
+  object EditKeeperAreaDepth: TEdit
+    Left = 90
+    Height = 27
+    Top = 56
+    Width = 41
+    TabOrder = 16
+    Text = '1'
+  end
+  object EditKeeperAreaWidth: TEdit
+    Left = 260
+    Height = 27
+    Top = 56
+    Width = 41
+    TabOrder = 17
+    Text = '3'
+  end
+  object editfieldmag: TEdit
+    Left = 112
+    Height = 27
+    Top = 237
+    Width = 41
+    TabOrder = 18
+    Text = '30'
+  end
+  object FormStorage: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'FIELD'
+    left = 176
+    top = 224
+  end
+end

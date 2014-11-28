@@ -1,0 +1,15 @@
+ComPort.BaudRate
+ComPort.Device
+EditDutyCycle.Text
+EditKickPulse.Text
+EditMaxVCap.Text
+Timer.Interval
+EditMaxVCapLv1.Text
+EditMaxVCapLv2.Text
+EditDutyCycleLv1.Text
+EditDutyCycleLv2.Text
+EditCompass.Text
+CBShow.Checked
+CBLan.Checked
+FKicker.Top
+FKicker.Left

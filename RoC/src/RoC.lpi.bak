@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="RoC"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="2">
+      <Item1>
+        <PackageName Value="lnetvisual"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+      </Item2>
+    </RequiredPackages>
+    <Units Count="15">
+      <Unit0>
+        <Filename Value="RoC.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RoC"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Main"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="rocconsts.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="RoCConsts"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="robots.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Robots"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="roles.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Roles"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="tatic.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Tatic"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="actions.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Actions"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="astar.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Astar"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="tasks.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Tasks"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="utils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Utils"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="field.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FField"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Field"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="drawmap.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="drawmap"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="mpc.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FormMPC"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="MPC"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="model.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="model"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="param.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FParam"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Param"/>
+      </Unit14>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="RoC"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
