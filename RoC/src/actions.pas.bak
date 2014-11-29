@@ -280,59 +280,10 @@ end;
 //-------------------------------------------------------------------------
 // TrajectoryController
 //
-// Calculates the correct v, vn, and w to follow the trajectory calculated
+// Calculates the correct v and w to follow the trajectory calculated
 // before. Limits speeds for deceleration when close to the target to arrive
 // to it at the desired speed.
 //-------------------------------------------------------------------------
-procedure TrajectoryController(speed, speed_on_target: double; var state: TRobotState; var com: TTacticCommand; var traj: TTrajectory);
-var statev, statevn, v, dteta, teta_power: double;
-    vmax, pw, tx, ty, segteta: double;
-    idx: integer;
-begin
-  //manuel
-  //LogString:='';
-
-  idx := Min(2, traj.count-1); //target is the 2nd trajectory point from current localization
-
-  //target x,y,dteta
-  tx := traj.pts[idx].x;
-  ty := traj.pts[idx].y;
-  dteta := DiffAngle(traj.pts[idx].teta, state.teta);
-  teta_power := traj.pts[idx].teta_power;
-
-  //teta of the direction it has to follow
-  segteta := ATan2(ty-state.y,tx-state.x);
-
-  //calculate new V and Vn
-  VxyToV(segteta, state.vx, state.vy, statev);
-
-  if traj.distance < 0.02 then begin
-    vmax := 0;
-
-  end else begin
-    vmax := sqr(speed_on_target) +  0.7*0.7*(traj.distance - 0.02);
-    if vmax > 0 then begin
-      vmax := sqrt(vmax);
-      if vmax>speedmax then vmax:=SpeedMax;
-    end else vmax := 0;
-  end;
-
-  v := speed;
-  if v > vmax then v := vmax;
-
-  //calculate w for rotation to desired teta
-  if abs(dteta) < 3 * Pi / 180 then begin
-    pw := 0;
-  end else begin
-    pw := 4 * dteta - 0.5 * state.w;
-    pw := pw * teta_power;
-  end;
-
-  SetTacticCommandsInRobotRefNH(com, v, segteta);
-
-
-end;
-
 procedure ActionGoToXYTeta(num: integer);
 var rx,ry,d: double;
     i: integer;
@@ -355,8 +306,7 @@ begin
     traj.pts[i].teta_power := 1;
   end;
 
-  //Call TrajectoryController
-  //TrajectoryController(ActionPars[num].speed, ActionPars[num].speed_on_target, RobotState[num], TacticCommands[num], traj);
+  //Call Controller
   GotoXYTheta2(ActionPars[num].speed, RobotState[num], TacticCommands[num], traj);
   RobotCalcData[num].trajectory_length := traj.distance;
 
@@ -364,7 +314,7 @@ end;
 
 procedure GotoXYTheta2(v: double; var state: TRobotState; var com: TTacticCommand; var traj: TTrajectory);
 const
-  teta_error_min=Pi/4;
+  teta_error_min=Pi/8;
   dist_error_max=0.001;
   kt=1;
   kd=1;

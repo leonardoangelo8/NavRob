@@ -60,7 +60,7 @@ object FParam: TFParam
     Top = 73
     Width = 112
     TabOrder = 2
-    Text = '192.168.106.43'
+    Text = '192.168.25.13'
   end
   object Label1: TLabel
     Left = 10

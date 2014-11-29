@@ -9,15 +9,19 @@
 // Na segunda fase para> Drone Carcará e Hexapod Minion
 //
 // FALTA FAZER:
-//             - COMUNICAÇÃO COM WATCHTOWER (POR RTDB)
-//             - USO DO JOYSTICK
-//             - CONTROLADOR NMPFC/NMPC PARA TURTLEBOT
-//             - COMUNICAÇÃO COM ROBÔ REAL
-//             - COMUNICAÇÃO POR RTDB ENTRE ROBÔS
-//             - DYNAMIC MAPPING SELECTION
-//             - INTEGRAÇÃO COM CÂMERA KINECT
-//             - ALGORITMO DE LOCALIZAÇÃO ROBÔ REAL
-//             - SLAM
+//             - COMUNICAÇÃO COM WATCHTOWER POR RTDB    (Leandro)
+//             - USO DO JOYSTICK                        (George)
+//             - CONTROLADOR NMPFC/NMPC PARA TURTLEBOT  (TCC 1)
+//             - COMUNICAÇÃO COM ROBÔ REAL POR ROS      (George)
+//             - COMUNICAÇÃO POR RTDB ENTRE ROBÔS       (Leandro)
+//             - DYNAMIC MAPPING SELECTION              (Mestrado 1)
+//             - INTEGRAÇÃO COM CÂMERA KINECT           (André)
+//             - ALGORITMO DE LOCALIZAÇÃO ROBÔ REAL     (TCC 2)
+//             - SLAM                                   (Leonardo)
+//
+//      OBS.: Outras coisas como quebra de formação inteligente, reconhecimento
+//            de faces, etc. serão implantadas mais pra frente, depois que os
+//            itens acima forem feitos.
 //
 //------------------------------------------------------------------------------
 
@@ -227,7 +231,6 @@ type
     MenuParam: TMenuItem;
     MenuWindows: TMenuItem;
     RGController: TRadioGroup;
-    TimerSim: TTimer;
     procedure BSetRoleClick(Sender: TObject);
     procedure CBSimClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -243,7 +246,6 @@ type
     procedure MenuFieldClick(Sender: TObject);
     procedure MenuJoystickClick(Sender: TObject);
     procedure MenuParamClick(Sender: TObject);
-    procedure TimerSimTimer(Sender: TObject);
     procedure UDPSimError(const msg: string; aSocket: TLSocket);
     procedure UDPSimReceive(aSocket: TLSocket);
 
@@ -257,12 +259,9 @@ type
     procedure SimMainLoop;
     procedure MainControl;
     procedure ManualControl(var V, W: double);
-    procedure Omin_Ticks(v,w: double; out w1,w2: double);
     procedure ResetView;
     procedure ShowEdges;
     procedure ShowRadar;
-
-    procedure OminSim(v,w: double; var R: TRobotState);
 
  //   procedure SendPlayerInfo;
 
@@ -327,7 +326,7 @@ var
 
 implementation
 
-uses Robots, Utils, Field, Tatic, Actions, Tasks, Param, drawmap, MPC;//, Camera, Joy, LCLType, omni3
+uses Robots, Utils, Field, Tatic, Actions, Tasks, Param, drawmap, MPC, model;//, Camera, Joy, LCLType, omni3
 
 {$R *.lfm}
 
@@ -505,14 +504,12 @@ var i: integer;
 begin
   if CBSim.Checked then begin
     UDPSim.Listen(StrToInt(FParam.EditSimTwoListenPort.Text));
-    TimerSim.Enabled:=True;
     for i := 0 to MaxRobots - 1 do begin
       RobotStatus[i].active := true;
       RobotState[i].count := 1;
     end;
   end else begin
     UDPSim.Disconnect;
-    TimerSim.Enabled:=False;
   end;
 end;
 
@@ -579,27 +576,6 @@ begin
       ManualControl(v,w);
 
       ControlAccelerationNLTMD(v,w);
-      Omin_Ticks(v,w,w1,w2);
-
-      with MemoActionPars.Lines do begin
-        Clear;
-        Add(format('Robô - x=%2f y=%2f teta=%2f',[RobotState[myNumber].x,RobotState[myNumber].y,RobotState[myNumber].teta]));
-        Add(format('Robô - v=%2f w=%2f',[RobotState[myNumber].v,RobotState[myNumber].w]));
-      end;
-
-    end;
-    2: begin //Joy    FALTA FAZER ROTINA PRA USAR JOYSTICK!!!
-      //V:=Form_joystick.V;
-      //W:=Form_joystick.W;
-
-      ControlAccelerationNLTMD(v,w);
-      Omin_Ticks(v,w,w1,w2);
-    end;
-    3: begin // Play
-      DoRobotRules(myNumber);
-
-      EditRoleName.Text:=RoleDefs[RobotInfo[myNumber].role].name;
-      EditTaskName.Text:=CTaskString[RobotInfo[myNumber].task];
 
       with MemoActionPars.Lines do begin
         Clear;
@@ -608,17 +584,35 @@ begin
         Add(format('Robô - vx=%2f vy=%2f',[RobotState[myNumber].vx,RobotState[myNumber].vy]));
       end;
 
-      v:=TacticCommands[myNumber].v;
+    end;
+    2: begin //Joy    FALTA FAZER ROTINA PRA USAR JOYSTICK!!!
+      //V:=Form_joystick.V;
+      //W:=Form_joystick.W;
+
+      ControlAccelerationNLTMD(v,w);
+    end;
+    3: begin // Play
+      DoRobotRules(myNumber);
+
+      EditRoleName.Text:=RoleDefs[RobotInfo[myNumber].role].name;
+      EditTaskName.Text:=CTaskString[RobotInfo[myNumber].task];
+
+      v:=TacticCommands[myNumber].v;        //Renova as velocidades a serem enviadas pro turtle
       w:=TacticCommands[myNumber].w;
       ControlAccelerationNLTMD(v,w);
-      Omin_Ticks(v,w,w1,w2);
+
+      with MemoActionPars.Lines do begin
+        Clear;
+        Add(format('Robô - x=%2f y=%2f teta=%2f',[RobotState[myNumber].x,RobotState[myNumber].y,RobotState[myNumber].teta]));
+        Add(format('Robô - v=%2f w=%2f',[RobotState[myNumber].v,RobotState[myNumber].w]));
+        Add(format('Robô - vx=%2f vy=%2f',[RobotState[myNumber].vx,RobotState[myNumber].vy]));
+      end;
+
     end;
   end;
 
   if CBSim.Checked=true then begin
     ControlAccelerationNLTMD(v,w);
-    //Omin_Ticks(v,w,w1,w2);
-    OminSim(v,w,RobotState[myNumber]);
     UDPSim.SendMessage(IntToStr(myNumber)+' '+
                        floatToStr(v)+' '+
                        floatToStr(w),
@@ -627,37 +621,6 @@ begin
 
   RobotState[myNumber].v:=v;
   RobotState[myNumber].w:=w;
-end;
-
-procedure TFMain.OminSim(v,w: double; var R: TRobotState);
-var
-    mte,ce,se: double;
-    i:integer;
-begin
-
-// Ideal Model, based on reference velocities
-
-  ce:=cos(R.teta);
-  se:=sin(R.teta);
-
-  R.v1:= v+(Wheeltowheeldist/2)*w;
-  R.v2:= v-(Wheeltowheeldist/2)*w;
-
-  R.x:=R.x+0.04*(v*ce);
-  R.y:=R.y+0.04*(v*se);
-  R.teta:=R.teta+0.04*w;
-
-end;
-
-procedure TFMain.Omin_Ticks(v,w: double; out w1,w2: double);
-var
-  speed1w,speed2w: double;
-begin
-  speed1w:= v+(WheelToWheelDist/2)*w;
-  speed2w:= v-(WheelToWheelDist/2)*w;
-
-  w1:=speed1w/(WheelDiameter/2);
-  w2:=speed2w/(WheelDiameter/2);
 end;
 
 //NOTE QUE APENAS TEMOS O ROBÔ SIMULADO!!!
@@ -673,19 +636,10 @@ begin
   view.Odos[0].speedw[0]:=RobotState[mynumber].v1;
   view.Odos[0].speedw[1]:=RobotState[mynumber].v2;
 
-  //UpdateObstacles;
-  //PropagateObstacles;
+  UpdateObstacles;
+  PropagateObstacles;
 
-  if RGController.ItemIndex<>0 then begin
-    for i:=0 to MaxRobots-1 do begin
-      if i=mynumber then PropagateXYTeta(RobotState[i])
-      else PropagateXYTetaOthers(RobotState[i]);
-    end;
-  end;
-
-  RobotState[mynumber].vx:=(RobotState[mynumber].x-LRState[myNumber].x)/0.04;
-  RobotState[mynumber].vy:=(RobotState[mynumber].y-LRState[myNumber].y)/0.04;
-  LRState:=RobotState;
+  VxyToV(RobotState[mynumber].teta, RobotState[mynumber].v, RobotState[mynumber].vx, RobotState[mynumber].vy);
 
   MainControl;
   sleep(1);
@@ -694,13 +648,6 @@ begin
   ShowAll;
   LastView:=View;
 
-end;
-
-procedure TFMain.TimerSimTimer(Sender: TObject);
-begin
-  if CBSim.Checked=true then begin
-     SimMainLoop;
-  end;
 end;
 
 procedure TFMain.UDPSimError(const msg: string; aSocket: TLSocket);
@@ -735,28 +682,30 @@ procedure TFMain.ProcessSimMsg(Data: string);
 var
   txt: String;
   msn: TStringList;
-  mv,mw: string;
+  mn, mv, mw, mx, my, mt,q3,q4: string;
+  t3,t4: float;
   i: integer;
 
 begin
   msn := TStringList.Create;
   msn.Text := Data;
 
-  SScanf(Data,'%s %s',[@mv, @mw]);
+  SScanf(Data,'%s %s %s %s %s %s %s',[@mn, @mv, @mw, @mx, @my, @q3, @q4]);
 
-  RobotState[myNumber].v:=strtofloatdef(mv,2);
-  RobotState[myNumber].w:=strtofloatdef(mw,2);
+  myNumber:=StrToIntDef(mn, 0);
+  RobotState[myNumber].v:=strtofloatdef(mv,0);
+  RobotState[myNumber].w:=strtofloatdef(mw,0);
+  RobotState[myNumber].x:=strtofloatDef(mx, 0);
+  RobotState[myNumber].y:=strtofloatDef(my, 0);
+
+  //Transformando quartenion (para uma rotação em z) em teta
+  t3:=strtofloatDef(q3, 0);
+  t4:=strtofloatDef(q4, 0);
+  RobotState[myNumber].teta:=2*arctan2(t3,t4);
 
   msn.Free;
 
-  {myNumber:=StrToIntDef(gData[0], 0);
-  RobotState[myNumber].x:=strtofloatDef(gData[1], 0);
-  RobotState[myNumber].y:=strtofloatDef(gData[2], 0);
-  RobotState[myNumber].teta:=strtofloatDef(gData[3], 0);
-
-  for i:=0 to NumMotors-1 do begin
-    DStates[i].Vact:=StrToInt(gData[i+4]);
-  end;}
+  IK(RobotState[myNumber].v,RobotState[myNumber].w,RobotState[mynumber].v1,RobotState[mynumber].v2);
 
   if CBSim.Checked=False then begin
      UDPSim.Disconnect;
@@ -912,8 +861,8 @@ begin
           cl:=clwhite;
           DrawRobotText(RobotState[i],cl,ImageMap.canvas);
         end else begin
-          cl:=CTeamColorColor24[TeamColor];
-          DrawRobot(RobotState[i],cl,ImageMap.canvas);
+          //cl:=CTeamColorColor24[TeamColor];
+          //DrawRobot(RobotState[i],cl,ImageMap.canvas);    //Não desenhar por enquanto
         end;
       end;
       DrawTRaj(Traj,ImageMap.canvas);

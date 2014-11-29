@@ -235,17 +235,11 @@ object FMain: TFMain
       end
     end
   end
-  object TimerSim: TTimer
-    Interval = 40
-    OnTimer = TimerSimTimer
-    left = 32
-    top = 152
-  end
   object FormStorage: TIniPropStorage
     StoredValues = <>
     IniSection = 'MAIN'
     left = 32
-    top = 200
+    top = 160
   end
   object UDPSim: TLUDPComponent
     Port = 0
