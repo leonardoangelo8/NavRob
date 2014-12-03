@@ -10,14 +10,15 @@
 //
 // FALTA FAZER:
 //             - COMUNICAÇÃO COM WATCHTOWER POR RTDB    (Leandro)
-//             - USO DO JOYSTICK                        (George)
-//             - CONTROLADOR NMPFC/NMPC PARA TURTLEBOT  (TCC 1)
-//             - COMUNICAÇÃO COM ROBÔ REAL POR ROS      (George)
 //             - COMUNICAÇÃO POR RTDB ENTRE ROBÔS       (Leandro)
-//             - DYNAMIC MAPPING SELECTION              (Mestrado 1)
-//             - INTEGRAÇÃO COM CÂMERA KINECT           (André)
-//             - ALGORITMO DE LOCALIZAÇÃO ROBÔ REAL     (TCC 2)
 //             - SLAM                                   (Leonardo)
+//             - USO DO JOYSTICK                        (George)
+//             - COMUNICAÇÃO COM ROBÔ REAL POR ROS      (George)
+//             - INTEGRAÇÃO COM CÂMERA KINECT           (André)
+//
+//             - CONTROLADOR NMPFC/NMPC PARA TURTLEBOT  (TCC 1)
+//             - ALGORITMO DE LOCALIZAÇÃO ROBÔ REAL     (TCC 2)
+//             - DYNAMIC MAPPING SELECTION              (Mestrado 1)
 //
 //      OBS.: Outras coisas como quebra de formação inteligente, reconhecimento
 //            de faces, etc. serão implantadas mais pra frente, depois que os
@@ -42,8 +43,8 @@ const
 
   MaxObstacles=70;
   NSim=30;
-  MaxV=1.0;
-  MaxW=0.1;
+  MaxV=0.7;
+  MaxW=3.14;
   ImgWidth=384;
   ImgHeight=288;
   MaxColors=8;
@@ -97,11 +98,8 @@ type
     v,w: double;
     vx,vy: double;
     v1,v2: double;
-    timestamp: integer;
     num: integer;
     count: integer;
-    compass: double;
-    compass_active: boolean;
     Vbatery:double;
   end;
 
@@ -184,9 +182,6 @@ type
     Odos,FreeOdos: array[0..MaxOdos-1] of TOdo;
     OdosCount,OdosTotalCount: integer;
     DOdos:TDOdos;
-
-    Compass: double;
-    CompassAvaible: boolean;
 
     Radar: array[0..MaxRadarRays-1] of TRadar;
     RadarRaysCount: integer;

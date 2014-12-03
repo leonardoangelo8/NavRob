@@ -1,0 +1,147 @@
+object FParam: TFParam
+  Left = 727
+  Height = 168
+  Top = 268
+  Width = 380
+  Caption = 'Parameters'
+  ClientHeight = 168
+  ClientWidth = 380
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object Label2: TLabel
+    Left = 24
+    Height = 17
+    Top = 107
+    Width = 80
+    Caption = 'Sim IP/Port:'
+    ParentColor = False
+  end
+  object EditSimTwoIP: TEdit
+    Left = 112
+    Height = 27
+    Top = 104
+    Width = 112
+    TabOrder = 0
+    Text = '127.0.0.1'
+  end
+  object EditSimTwoPort: TEdit
+    Left = 225
+    Height = 27
+    Top = 104
+    Width = 40
+    TabOrder = 1
+    Text = '6001'
+  end
+  object Label3: TLabel
+    Left = 273
+    Height = 17
+    Top = 107
+    Width = 45
+    Caption = 'Listen:'
+    ParentColor = False
+  end
+  object EditSimTwoListenPort: TEdit
+    Left = 321
+    Height = 27
+    Top = 104
+    Width = 40
+    TabOrder = 2
+    Text = '6000'
+  end
+  object EditRoC3IP: TEdit
+    Left = 72
+    Height = 27
+    Top = 67
+    Width = 112
+    TabOrder = 3
+  end
+  object Label1: TLabel
+    Left = 9
+    Height = 17
+    Top = 18
+    Width = 58
+    Caption = 'RoC 1 IP:'
+    ParentColor = False
+  end
+  object EditRoc1IP: TEdit
+    Left = 72
+    Height = 27
+    Top = 14
+    Width = 112
+    TabOrder = 4
+  end
+  object Label4: TLabel
+    Left = 8
+    Height = 17
+    Top = 46
+    Width = 58
+    Caption = 'RoC 2 IP:'
+    ParentColor = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Height = 17
+    Top = 73
+    Width = 58
+    Caption = 'RoC 3 IP:'
+    ParentColor = False
+  end
+  object EditRoc2IP: TEdit
+    Left = 72
+    Height = 27
+    Top = 41
+    Width = 112
+    TabOrder = 5
+  end
+  object EditRoc4IP: TEdit
+    Left = 256
+    Height = 27
+    Top = 14
+    Width = 112
+    TabOrder = 6
+  end
+  object EditRoc5IP: TEdit
+    Left = 256
+    Height = 27
+    Top = 41
+    Width = 112
+    TabOrder = 7
+  end
+  object EditRoc6IP: TEdit
+    Left = 256
+    Height = 27
+    Top = 67
+    Width = 112
+    TabOrder = 8
+  end
+  object Label6: TLabel
+    Left = 191
+    Height = 17
+    Top = 18
+    Width = 58
+    Caption = 'RoC 4 IP:'
+    ParentColor = False
+  end
+  object Label7: TLabel
+    Left = 191
+    Height = 17
+    Top = 46
+    Width = 58
+    Caption = 'RoC 5 IP:'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 191
+    Height = 17
+    Top = 73
+    Width = 58
+    Caption = 'RoC 6 IP:'
+    ParentColor = False
+  end
+  object FormStorage: TIniPropStorage
+    StoredValues = <>
+    IniSection = 'PARAM'
+    left = 232
+    top = 136
+  end
+end

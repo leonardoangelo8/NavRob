@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="/usr/local/bin/fpc" Date="1413397285"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -vewnhi &quot;-Fi/home/t7br-master/Área de Trabalho/NavRob/Whatchtower/src/lib/x86_64-linux&quot; -Fl/opt/gnome/lib -Fu/home/t7br-master/Desenvolvimento/lazarus/components/lnet/lazaruspackage/lib/x86_64-linux -Fu/home/t7br-master/Desenvolvimento/lazarus/components/ideintf/units/x86_64-linux/gtk2 -Fu/home/t7br-master/Desenvolvimento/lazarus/components/lazcontrols/lib/x86_64-linux/gtk2 -Fu/home/t7br-master/Desenvolvimento/lazarus/lcl/units/x86_64-linux/gtk2 -Fu/home/t7br-master/Desenvolvimento/lazarus/lcl/units/x86_64-linux -Fu/home/t7br-master/Desenvolvimento/lazarus/components/lazutils/lib/x86_64-linux -Fu/home/t7br-master/Desenvolvimento/lazarus/packager/units/x86_64-linux &quot;-Fu/home/t7br-master/Área de Trabalho/NavRob/Whatchtower/src/&quot; &quot;-FU/home/t7br-master/Área de Trabalho/NavRob/Whatchtower/src/lib/x86_64-linux/&quot; -l -dLCL -dLCLgtk2 watchtower.lpr"/>
+</CONFIG>

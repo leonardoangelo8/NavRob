@@ -1,0 +1,35 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TFParam','FORMDATA',[
+  'TPF0'#7'TFParam'#6'FParam'#4'Left'#3#215#2#6'Height'#3#168#0#3'Top'#3#12#1#5
+  +'Width'#3'|'#1#7'Caption'#6#10'Parameters'#12'ClientHeight'#3#168#0#11'Clien'
+  +'tWidth'#3'|'#1#8'OnCreate'#7#10'FormCreate'#10'LCLVersion'#6#7'1.2.6.0'#0#6
+  +'TLabel'#6'Label2'#4'Left'#2#24#6'Height'#2#17#3'Top'#2'k'#5'Width'#2'P'#7'C'
+  +'aption'#6#12'Sim IP/Port:'#11'ParentColor'#8#0#0#5'TEdit'#12'EditSimTwoIP'#4
+  +'Left'#2'p'#6'Height'#2#27#3'Top'#2'h'#5'Width'#2'p'#8'TabOrder'#2#0#4'Text'
+  +#6#9'127.0.0.1'#0#0#5'TEdit'#14'EditSimTwoPort'#4'Left'#3#225#0#6'Height'#2
+  +#27#3'Top'#2'h'#5'Width'#2'('#8'TabOrder'#2#1#4'Text'#6#4'6001'#0#0#6'TLabel'
+  +#6'Label3'#4'Left'#3#17#1#6'Height'#2#17#3'Top'#2'k'#5'Width'#2'-'#7'Caption'
+  +#6#7'Listen:'#11'ParentColor'#8#0#0#5'TEdit'#20'EditSimTwoListenPort'#4'Left'
+  +#3'A'#1#6'Height'#2#27#3'Top'#2'h'#5'Width'#2'('#8'TabOrder'#2#2#4'Text'#6#4
+  +'6000'#0#0#5'TEdit'#10'EditRoC3IP'#4'Left'#2'H'#6'Height'#2#27#3'Top'#2'C'#5
+  +'Width'#2'p'#8'TabOrder'#2#3#0#0#6'TLabel'#6'Label1'#4'Left'#2#9#6'Height'#2
+  +#17#3'Top'#2#18#5'Width'#2':'#7'Caption'#6#9'RoC 1 IP:'#11'ParentColor'#8#0#0
+  +#5'TEdit'#10'EditRoc1IP'#4'Left'#2'H'#6'Height'#2#27#3'Top'#2#14#5'Width'#2
+  +'p'#8'TabOrder'#2#4#0#0#6'TLabel'#6'Label4'#4'Left'#2#8#6'Height'#2#17#3'Top'
+  +#2'.'#5'Width'#2':'#7'Caption'#6#9'RoC 2 IP:'#11'ParentColor'#8#0#0#6'TLabel'
+  +#6'Label5'#4'Left'#2#8#6'Height'#2#17#3'Top'#2'I'#5'Width'#2':'#7'Caption'#6
+  +#9'RoC 3 IP:'#11'ParentColor'#8#0#0#5'TEdit'#10'EditRoc2IP'#4'Left'#2'H'#6'H'
+  +'eight'#2#27#3'Top'#2')'#5'Width'#2'p'#8'TabOrder'#2#5#0#0#5'TEdit'#10'EditR'
+  +'oc4IP'#4'Left'#3#0#1#6'Height'#2#27#3'Top'#2#14#5'Width'#2'p'#8'TabOrder'#2
+  +#6#0#0#5'TEdit'#10'EditRoc5IP'#4'Left'#3#0#1#6'Height'#2#27#3'Top'#2')'#5'Wi'
+  +'dth'#2'p'#8'TabOrder'#2#7#0#0#5'TEdit'#10'EditRoc6IP'#4'Left'#3#0#1#6'Heigh'
+  +'t'#2#27#3'Top'#2'C'#5'Width'#2'p'#8'TabOrder'#2#8#0#0#6'TLabel'#6'Label6'#4
+  +'Left'#3#191#0#6'Height'#2#17#3'Top'#2#18#5'Width'#2':'#7'Caption'#6#9'RoC 4'
+  +' IP:'#11'ParentColor'#8#0#0#6'TLabel'#6'Label7'#4'Left'#3#191#0#6'Height'#2
+  +#17#3'Top'#2'.'#5'Width'#2':'#7'Caption'#6#9'RoC 5 IP:'#11'ParentColor'#8#0#0
+  +#6'TLabel'#6'Label8'#4'Left'#3#191#0#6'Height'#2#17#3'Top'#2'I'#5'Width'#2':'
+  +#7'Caption'#6#9'RoC 6 IP:'#11'ParentColor'#8#0#0#15'TIniPropStorage'#11'Form'
+  +'Storage'#12'StoredValues'#14#0#10'IniSection'#6#5'PARAM'#4'left'#3#232#0#3
+  +'top'#3#136#0#0#0#0
+]);

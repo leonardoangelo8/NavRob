@@ -314,7 +314,7 @@ end;
 
 procedure GotoXYTheta2(v: double; var state: TRobotState; var com: TTacticCommand; var traj: TTrajectory);
 const
-  teta_error_min=Pi/8;
+  teta_error_min=Pi/4;
   dist_error_max=0.001;
   kt=1;
   kd=1;

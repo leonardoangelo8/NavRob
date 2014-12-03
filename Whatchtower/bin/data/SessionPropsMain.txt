@@ -1,0 +1,16 @@
+RGController.ItemIndex
+RGRobotSel.ItemIndex
+CBRobotActive1.Checked
+CBRobotActive2.Checked
+CBRobotActive3.Checked
+CBRobotActive4.Checked
+CBRobotActive5.Checked
+CBRobotActive6.Checked
+CBForceRobotActive1.Checked
+CBForceRobotActive2.Checked
+CBForceRobotActive3.Checked
+CBForceRobotActive4.Checked
+CBForceRobotActive5.Checked
+CBForceRobotActive6.Checked
+RGDecision.ItemIndex
+

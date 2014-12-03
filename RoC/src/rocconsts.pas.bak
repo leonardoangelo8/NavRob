@@ -17,7 +17,7 @@ const
 
 var
   AxialDistance: double=0.2318;  // distancia entre as rodas
-  SpeedMax: double=3;
+  SpeedMax: double=1;
 
   //---------------------------------------
   //Soccer Map - Change it with other maps

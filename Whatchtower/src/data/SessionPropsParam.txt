@@ -1,0 +1,9 @@
+EditIPBase.Text
+EditCommand.Text
+RGRobotNumber.ItemIndex
+FParam.top
+FParam.left
+EditSimTwoIP.Text
+EditSimTwoPort.Text
+EditSimTwoListenPort.Text
+
